@@ -1,4 +1,4 @@
 Blood donors
 =================================
 
-This file will be packaged with your application, when using `activator dist`.
+Tiny play project for blood donation network management.
