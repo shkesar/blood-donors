@@ -1,0 +1,94 @@
+@(donorForm: Form[Donor])
+
+@main("Dashboard") {
+  <li><a href="/find">Find <span class="sr-only">(current)</span></a></li>
+  <li class="active"><a href="/dashboard">Dashboard</a></li>
+} {
+
+  <form class="form-horizontal" action="@routes.Application.save" method="POST">
+    <fieldset>
+
+    <!-- Form Name -->
+    <legend style="margin-left: 20px;">New donor details</legend>
+
+    <!-- Full name input -->
+    <div class="form-group">
+      <label class="col-xs-offset-1 col-xs-3 col-md-2 control-label" for="textinput">Name</label>
+      <div class="col-xs-7 col-md-4 col-md-offset-1">
+      <input id="textinput" name="name" type="text" placeholder="Full name" class="form-control input-md" value="@donorForm("name").value">
+      </div>
+    </div>
+
+    <!-- Address input -->
+    <div class="form-group">
+      <label class="col-xs-offset-1 col-xs-3 col-md-2 control-label" for="textarea">Address</label>
+      <div class="col-xs-7 col-md-4 col-md-offset-1">
+        <textarea class="form-control" id="textarea" name="address" value="@donorForm("address").value">Local address</textarea>
+      </div>
+    </div>
+
+    <!-- Blood group -->
+    <div class="form-group">
+      <label class="col-xs-offset-1 col-xs-3 col-md-2 control-label" for="blood-group-selector">Blood Group</label>
+      <div class="col-xs-7 col-md-5 col-md-offset-1">
+        <select class="selectpicker" name="bloodGroup" value="@donorForm("bloodGroup").value">
+          <option>A+</option>
+          <option>A-</option>
+          <option>B+</option>
+          <option>B-</option>
+          <option>AB+</option>
+          <option>AB-</option>
+          <option>O+</option>
+          <option>O-</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Locality -->
+    <div class="form-group">
+      <label class="col-xs-offset-1 col-xs-3 col-md-2 control-label" for="locality-selector">Locality</label>
+      <div class="col-xs-7 col-md-4 col-md-offset-1">
+        <select class="selectpicker" name="locality" value="@donorForm("locality").value">
+          <option>Viman Nagar</option>
+          <option>Pune City</option>
+          <option>Katraj</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- City -->
+    <div class="form-group">
+      <label class="col-xs-offset-1 col-xs-3 col-md-2 control-label" for="locality-selector">City</label>
+      <div class="col-xs-7 col-md-4 col-md-offset-1">
+        <select class="selectpicker" name="city" value="@donorForm("city").value">
+          <option value="Pune">Pune</option>
+          <option value="Mumbai">Mumbai</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-xs-offset-1 col-xs-3 col-md-2 control-label" for="locality-selector">Contact no.</label>
+      <div class="col-xs-7 col-md-4 col-md-offset-1">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon2">+91</span>
+          <input type="text" class="form-control" placeholder="Personal no." aria-describedby="basic-addon2" name="contact" value="@donorForm("contact").value">
+        </div>
+      </div>
+    </div>
+
+    <!-- Search button -->
+    <div class="row">
+      <div class="col-xs-offset-7 col-xs-3">
+        <span class="button-wrap">
+          <button type="submit" class="button button-large button-circle button-flat">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+          </a>
+        </span>
+      </div>
+    </div>
+
+    </fieldset>
+  </form>
+
+}

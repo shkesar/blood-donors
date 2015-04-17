@@ -1,0 +1,28 @@
+@(donors: List[Donor])
+
+@main("Result") {
+	<li><a href="/find">Find <span class="sr-only">(current)</span></a></li>
+  <li><a href="/dashboard">Dashboard</a></li>
+} {
+
+	@if(donors.isEmpty) {
+		<div class="well">Not Found</div>
+	} else {
+		<table class="table table-striped">
+			<tr bgcolor="gray">
+				<th>Name</th>
+				<th>Contact</th>
+				<th>Locality</th>
+			</tr>
+
+			@for(donor <- donors) {
+				<tr>
+					<td>@donor.name</td>
+					<td>@donor.contact</td>
+					<td>@donor.locality</td>
+				</tr>
+			}
+		</table>
+	}	
+
+}

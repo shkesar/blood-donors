@@ -1,0 +1,52 @@
+@(findForm: Form[FindData])
+
+@main("Find donors") {
+  <li class="active"><a href="/find">Find <span class="sr-only">(current)</span></a></li>
+  <li><a href="/dashboard">Dashboard</a></li>
+} {
+
+  <form class="form-horizontal" action="@routes.Find.result" method="POST">
+
+    <!-- Blood group -->
+    <div class="form-group">
+      <label class="col-xs-offset-1 col-xs-3 col-md-2 control-label" for="blood-group-selector">Blood Group</label>
+      <div class="col-xs-7 col-md-5 col-md-offset-1">
+        <select class="selectpicker" name="bloodGroup" value="@findForm("bloodGroup").value">
+          <option>A+</option>
+          <option>A-</option>
+          <option>B+</option>
+          <option>B-</option>
+          <option>AB+</option>
+          <option>AB-</option>
+          <option>O+</option>
+          <option>O-</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Locality -->
+    <div class="form-group">
+      <label class="col-xs-offset-1 col-xs-3 col-md-2 control-label" for="locality-selector">Locality</label>
+      <div class="col-xs-7 col-md-4 col-md-offset-1">
+        <select class="selectpicker" name="locality" value="@findForm("locality").value">
+          <option>Viman Nagar</option>
+          <option>Pune City</option>
+          <option>Katraj</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Search button -->
+    <div class="row">
+      <div class="col-xs-offset-7 col-xs-3">
+        <span class="button-wrap">
+          <button type="submit" class="button button-large button-circle button-flat">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          </a>
+        </span>
+      </div>
+    </div>
+
+  </form>
+
+}

@@ -1,0 +1,16 @@
+/* form selectors */
+#blood-group-selector {
+	margin-top: 30px;
+}
+#location-selector {
+}
+
+/* form search button */
+.button {
+}
+
+/* form dropdown list */
+/* bootstrap element modified */
+.dropdown-menu {
+	width: 100%;
+}
